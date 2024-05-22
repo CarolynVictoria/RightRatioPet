@@ -1,11 +1,22 @@
 main {
 	min-height: 80vh;
 }
-
+.navbar {
+ padding: 2px;
+	background-color: #869ace!important;
+}
 .rr-cobalt {
   color: #2a348a;
 }
-
+.navtitle {
+	font-size: 2rem;
+	color: #2a348a;
+}
+.logo {
+	height: 90px;
+	padding-right: 15px;
+	margin:0;
+}
 .rating span {
 	margin: 0.1rem;
 }
