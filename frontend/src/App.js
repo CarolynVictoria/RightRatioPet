@@ -1,4 +1,18 @@
+import { Container } from 'react-bootstrap';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 const App = () => {
-	return <h1>Welcome to Right:Ratio</h1>;
+	return (
+		<>
+			<Header />
+			<main className='py-3'>
+				<Container>
+					<h1 className='rr-cobalt'>Right:Ratio Data Center</h1>
+				</Container>
+			</main>
+			<Footer />
+		</>
+	);
 };
 export default App;
