@@ -3,18 +3,19 @@ main {
 }
 .navbar {
  padding: 2px;
-	background-color: #869ace!important;
+	background-color: #2a348a!important;
 }
+/* dark blue from right:ratio color palette */
 .rr-cobalt {
   color: #2a348a;
 }
 .navtitle {
-	font-size: 2rem;
-	color: #2a348a;
+	font-size: 1.8rem;
+	color: #fff;
 }
 .logo {
 	height: 90px;
-	padding-right: 15px;
+	padding-right: 1.2rem;
 	margin:0;
 }
 .rating span {
