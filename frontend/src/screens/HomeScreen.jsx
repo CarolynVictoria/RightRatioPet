@@ -19,10 +19,12 @@ const HomeScreen = () => {
 			<h1 className='rr-black'>Clients</h1>
 			<Row>
 				{sortedClients.map((client) => {
-					// Create a new client object with the formatted petName
+					// Create a new client object with the formatted names
 					const formattedClient = {
 						...client,
 						petName: formatName(client.petName),
+						firstName: formatName(client.firstName),
+						lastName: formatName(client.lastName),
 					};
 
 					return (

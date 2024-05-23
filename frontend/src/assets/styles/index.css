@@ -12,6 +12,9 @@ main {
 .rr-black {
 	color: #1d2029;
 }
+.rr-small {
+	font-size: 0.8em;
+}
 .navtitle {
 	font-size: 1.8rem;
 	color: #fff;
@@ -20,6 +23,19 @@ main {
 	height: 90px;
 	padding-right: 1.2rem;
 	margin: 0;
+}
+.rr-email {
+	height: 2em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.rr-email:hover {
+	white-space: normal;
+	overflow: visible;
+	background-color: #fff; /* Optional: to make the expanded text more readable */
+	z-index: 1000; /* Ensures the text appears above other elements */
 }
 
 /* for the pet photos */
