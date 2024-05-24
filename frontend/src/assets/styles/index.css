@@ -31,6 +31,10 @@ main {
 	white-space: nowrap;
 }
 
+.rr-tint {
+	background-color: #fff;
+}
+
 .rr-email:hover {
 	white-space: normal;
 	overflow: visible;
@@ -38,42 +42,30 @@ main {
 	z-index: 1000; /* Ensures the text appears above other elements */
 }
 
-/* for the pet photos */
+/* for the pet photos front page */
 .pet-photo {
 	width: 100%;
 	height: 200px;
 	object-fit: cover;
 	object-position: center;
 }
-
-.rating span {
-	margin: 0.1rem;
+/* pet photos on individual profiles */
+.pet-profile-image {
+	width: 100%;
+	max-height: 700px;
+	object-fit: cover;
+	object-position: center;
 }
 
-.rating svg {
-	color: #f8e825;
-}
+/* overrides */
 
-.rating-text {
-	font-size: 0.8rem;
-	font-weight: 600;
-	padding-left: 0.5rem;
-}
-
-.product-title {
-	height: 2.5em; /* Set a fixed height */
-	overflow: hidden; /* Hide overflow content */
-	text-overflow: ellipsis; /* Add ellipsis for long text */
-	white-space: nowrap; /* Prevent wrapping */
+.list-group-item {
+	color: #1d2029;
 }
 
 table td,
 table th {
 	text-align: center;
-}
-
-.review {
-	margin-top: 30px;
 }
 
 .review h2 {

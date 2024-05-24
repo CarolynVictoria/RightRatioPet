@@ -21,6 +21,7 @@ const clients = [
 		petImage: '/images/664e4acb7bbe4dad273efbb6.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5922161840404702617/IMG_2133.jpeg',
+		petVet: 'Dr Trina Hazzah',
 		petWeight: '42',
 		phoneNumber: '(818) 836-0091',
 		species: 'Dog',
@@ -83,6 +84,7 @@ const clients = [
 		petImage: '/images/66456d0010f3f2dea0b32152.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5916351172566117024/Facetune_22-04-2024-14-56-57.jpeg',
+		petVet: 'Dr Peter Kross',
 		petWeight: '8.5',
 		phoneNumber: '(646) 330-1551',
 		species: 'Dog',
@@ -113,6 +115,7 @@ const clients = [
 		petImage: '/images/6643e493cee7bcb796592f2d.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5915346568291354073/Screenshot_20240506_193558_Chrome.jpg',
+		petVet: 'DR MAGDA DR HAZZAH',
 		petWeight: '75',
 		phoneNumber: '(323) 385-9642',
 		species: 'Dog',
@@ -145,6 +148,7 @@ const clients = [
 		petImage: '/images/663cd618f38f04fb42cdffbb.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5910721970911268126/IMG_1982.jpeg',
+		petVet: '',
 		petWeight: '12',
 		phoneNumber: '(925) 528-9599',
 		species: 'Cat',
@@ -175,6 +179,7 @@ const clients = [
 		petImage: '/images/663b66a1a2d5ccceedda0cd9.png',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5909781256811906790/IMG_0173.png',
+		petVet: 'Dr Kendra Faeke',
 		petWeight: '97',
 		phoneNumber: '(415) 991-9859',
 		species: 'Dog',
@@ -204,6 +209,7 @@ const clients = [
 		petImage: '/images/663a72d999653b738646afc7.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5909157051432068254/IMG_7249.jpeg',
+		petVet: '',
 		petWeight: '80',
 		phoneNumber: '(303) 898-0804',
 		species: 'Dog',
@@ -235,6 +241,7 @@ const clients = [
 		petImage: '/images/663a37d523ade7956567fad9.png',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5909006103858689538/IMG-0412.PNG',
+		petVet: 'Dr Tom',
 		petWeight: '11',
 		phoneNumber: '(714) 788-9625',
 		species: 'Dog',
@@ -265,6 +272,7 @@ const clients = [
 		petImage: '/images/6637c922389b6aff4c4cb185.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5907411992163937717/image.jpg',
+		petVet: '',
 		petWeight: '17',
 		phoneNumber: '(760) 216-3033',
 		species: 'Dog',
@@ -295,6 +303,7 @@ const clients = [
 		petImage: '/images/66351c6da47e850ba18a15e2.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5905659052314241132/IMG_7037.jpeg',
+		petVet: '',
 		petWeight: '71',
 		phoneNumber: '(865) 257-0911',
 		species: 'Dog',
@@ -326,6 +335,7 @@ const clients = [
 		petImage: '/images/664f8dd9675a4f551eee6981.png',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5922988868307136854/Oreo%2018th%20bday%20Apr%2030%202024.PNG',
+		petVet: 'Karen Koo DVM',
 		petWeight: '6',
 		phoneNumber: '(323) 823-2954',
 		species: 'Cat',
@@ -356,6 +366,7 @@ const clients = [
 		petImage: '/images/6632c5578ef11d5f50fc539e.jpg',
 		petPhoto:
 			'https://www.jotform.com/uploads/ivmholdings/220194948845164/5904125488956058045/IMG_8811.jpeg',
+		petVet: 'Cody Rackley',
 		petWeight: '36',
 		phoneNumber: '(626) 641-4196',
 		species: 'Dog',
