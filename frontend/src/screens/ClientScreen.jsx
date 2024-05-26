@@ -1,11 +1,21 @@
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
-import clients from '../clients';
+import axios from 'axios';
 
 const ClientScreen = () => {
+	const [client, setClient] = useState({});
+
 	const { id: clientId } = useParams();
-	const client = clients.find((c) => c._id === clientId);
+
+	useEffect(() => {
+		const fetchClient = async () => {
+			const { data } = await axios.get(`/api/clients/${clientId}`);
+			setClient(data);
+		};
+
+		fetchClient();
+	}, [clientId]);
 
 	return (
 		<>
@@ -125,7 +135,7 @@ const ClientScreen = () => {
 				<Col md={4}>
 					<Card className='mt-4'>
 						<ListGroup variant='flush'>
-							<ListGroup.Item className='rr-tint'>
+							<ListGroup.Item>
 								<Row>
 									<div className='mb-1'>
 										<strong>Pet Parent</strong>
@@ -141,7 +151,7 @@ const ClientScreen = () => {
 									<Col>{client.phoneNumber}</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item className='rr-tint'>
+							<ListGroup.Item>
 								<Row>
 									<div className='mb-1'>
 										<strong>Mailing Address</strong>
@@ -151,7 +161,7 @@ const ClientScreen = () => {
 							</ListGroup.Item>
 						</ListGroup>
 						<ListGroup variant='flush'>
-							<ListGroup.Item className='rr-tint'>
+							<ListGroup.Item>
 								<Row>
 									<div className='mb-1'>
 										<strong>Payment Method</strong>
@@ -159,7 +169,7 @@ const ClientScreen = () => {
 									<Col>{client.paymentMethodChoice}</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item className='rr-tint'>
+							<ListGroup.Item>
 								<Row>
 									<div className='mb-1'>
 										<strong>How Referred</strong>
@@ -167,7 +177,7 @@ const ClientScreen = () => {
 									<Col>{client.howReferred}</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item className='rr-tint'>
+							<ListGroup.Item>
 								<Row>
 									<div className='mb-1'>
 										<strong>Intake Action</strong>

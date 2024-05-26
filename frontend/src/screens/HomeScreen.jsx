@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Client from '../components/Client';
-import clients from '../clients';
+//import clients from '../clients';
 
 const HomeScreen = () => {
+	const [clients, setClients] = useState([]);
+
+	useEffect(() => {
+		const fetchClients = async () => {
+			const { data } = await axios.get('/api/clients');
+			setClients(data);
+		};
+
+		fetchClients();
+	}, []);
+
 	//Capitalize the first letter of each name
 	const formatName = (string) => {
 		return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
@@ -28,7 +41,7 @@ const HomeScreen = () => {
 					};
 
 					return (
-						<Col key={client._id} sm={12} md={4} lg={4} xl={3}>
+						<Col key={client._id} sm={12} md={4} lg={4} xl={2}>
 							<Client client={formattedClient} />
 						</Col>
 					);

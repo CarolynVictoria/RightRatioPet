@@ -1,3 +1,32 @@
+/* for full page width */
+/* Resetting margin and padding for all elements */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Setting the body and html to full width and height */
+.container {
+	width: 100%;
+	height: 100%;
+}
+.container {
+	padding: 0 2rem;
+}
+
+@media (min-width: 700px) {
+	.container-xxl,
+	.container-xl,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container {
+		max-width: 1920px;
+	}
+}
+
+/* end full page width */
 main {
 	min-height: 80vh;
 }
