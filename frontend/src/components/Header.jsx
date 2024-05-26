@@ -1,17 +1,15 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
 import { LinkContainer } from 'react-router-bootstrap';
-import logo from '../assets/logo.png';
 
-const header = () => {
+const Header = () => {
 	return (
 		<header>
 			<Navbar bg='dark' variant='dark' expand='md' collapseOnSelect>
 				<Container>
 					<LinkContainer to='/'>
-						<Navbar.Brand className='navtitle'>
-							<img src={logo} alt='right:ratio' className='logo' />
-							Right:Ratio Data Center
+						<Navbar.Brand>
+							RightRatio Data Center
 						</Navbar.Brand>
 					</LinkContainer>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -30,4 +28,4 @@ const header = () => {
 		</header>
 	);
 };
-export default header;
+export default Header;
