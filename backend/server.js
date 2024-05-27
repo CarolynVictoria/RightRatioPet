@@ -10,11 +10,11 @@ connectDB();
 
 const app = express();
 
-app.use('/api/clients', clientRoutes);
-
 app.get('/', (req, res) => {
 	res.send('API is running...');
 });
+
+app.use('/api/clients', clientRoutes);
 
 app.listen(port, () =>
 	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${port}`)

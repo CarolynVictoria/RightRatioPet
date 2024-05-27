@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 const ClientScreen = () => {
-	const [client, setClient] = useState({});
+	const [client, setClient] = useState([]);
 
 	const { id: clientId } = useParams();
 
@@ -19,6 +20,9 @@ const ClientScreen = () => {
 
 	return (
 		<>
+			<Link className='btn btn-light my-3' to='/'>
+				Go Back
+			</Link>
 			<Row>
 				<Col md={8}>
 					<ListGroup variant='flush'>
@@ -135,7 +139,7 @@ const ClientScreen = () => {
 				<Col md={4}>
 					<Card className='mt-4'>
 						<ListGroup variant='flush'>
-							<ListGroup.Item>
+							<ListGroup.Item className='rr-tint'>
 								<Row>
 									<div className='mb-1'>
 										<strong>Pet Parent</strong>
@@ -151,7 +155,7 @@ const ClientScreen = () => {
 									<Col>{client.phoneNumber}</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item>
+							<ListGroup.Item className='rr-tint'>
 								<Row>
 									<div className='mb-1'>
 										<strong>Mailing Address</strong>
@@ -161,7 +165,7 @@ const ClientScreen = () => {
 							</ListGroup.Item>
 						</ListGroup>
 						<ListGroup variant='flush'>
-							<ListGroup.Item>
+							<ListGroup.Item className='rr-tint'>
 								<Row>
 									<div className='mb-1'>
 										<strong>Payment Method</strong>
@@ -169,7 +173,7 @@ const ClientScreen = () => {
 									<Col>{client.paymentMethodChoice}</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item>
+							<ListGroup.Item className='rr-tint'>
 								<Row>
 									<div className='mb-1'>
 										<strong>How Referred</strong>
@@ -177,7 +181,7 @@ const ClientScreen = () => {
 									<Col>{client.howReferred}</Col>
 								</Row>
 							</ListGroup.Item>
-							<ListGroup.Item>
+							<ListGroup.Item className='rr-tint'>
 								<Row>
 									<div className='mb-1'>
 										<strong>Intake Action</strong>
