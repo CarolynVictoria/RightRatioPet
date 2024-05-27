@@ -9,7 +9,24 @@ const HomeScreen = () => {
 	useEffect(() => {
 		const fetchClients = async () => {
 			const { data } = await axios.get('/api/clients');
-			setClients(data);
+
+			// Capitalize the first letter of the first word of petName (if it exists) and sort the clients by petName
+			const processedData = data
+				.map((client) => {
+					let firstWord = client.petName ? client.petName.split(' ')[0] : '';
+					if (firstWord) {
+						firstWord =
+							firstWord.charAt(0).toUpperCase() +
+							firstWord.slice(1).toLowerCase();
+					}
+					return {
+						...client,
+						petName: firstWord,
+					};
+				})
+				.sort((a, b) => a.petName.localeCompare(b.petName));
+
+			setClients(processedData);
 		};
 
 		fetchClients();
@@ -28,4 +45,5 @@ const HomeScreen = () => {
 		</>
 	);
 };
+
 export default HomeScreen;

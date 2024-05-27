@@ -149,7 +149,7 @@ const ClientScreen = () => {
 									</Col>
 								</Row>
 								<Row>
-									<Col>{client.email}</Col>
+									<Col>{client.eMail}</Col>
 								</Row>
 								<Row>
 									<Col>{client.phoneNumber}</Col>
