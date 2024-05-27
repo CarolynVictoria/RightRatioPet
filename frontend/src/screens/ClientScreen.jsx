@@ -5,6 +5,14 @@ import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 const ClientScreen = () => {
+	const formatDate = (dateString) => {
+		const date = new Date(dateString);
+		const day = String(date.getDate()).padStart(2, '0');
+		const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+		const year = date.getFullYear();
+		return `${month}-${day}-${year}`;
+	};
+
 	const [client, setClient] = useState([]);
 
 	const { id: clientId } = useParams();
@@ -18,13 +26,18 @@ const ClientScreen = () => {
 		fetchClient();
 	}, [clientId]);
 
+	const intakeAction = client.intakeActionRequested
+		? client.intakeActionRequested.trim()
+		: '';
 	return (
 		<>
-			<Link className='btn btn-light my-3' to='/'>
-				Go Back
-			</Link>
 			<Row>
 				<Col md={8}>
+					<Row className='rr-black rr-small'>
+						<Col xs={12}>
+							<strong>Intake Date: </strong> {formatDate(client.submissionDate)}
+						</Col>
+					</Row>
 					<ListGroup variant='flush'>
 						<ListGroup.Item>
 							<Row>
@@ -124,13 +137,16 @@ const ClientScreen = () => {
 									<strong>Pet Photo:</strong>
 								</Col>
 								<Col xs={9}>
-									<Image
+									<p className='rr-small rr-note'>
+										- image display is under development -
+									</p>
+									{/* <Image
 										className='pet-profile-image mt-3'
 										src={client.petImage}
 										alt={client.petName}
 										fluid
 										rounded
-									/>
+									/> */}
 								</Col>
 							</Row>
 						</ListGroup.Item>
@@ -186,7 +202,7 @@ const ClientScreen = () => {
 									<div className='mb-1'>
 										<strong>Intake Action</strong>
 									</div>
-									<Col>{client.intakeActionRequested}</Col>
+									<Col>{intakeAction || 'not provided'}</Col>
 								</Row>
 							</ListGroup.Item>
 						</ListGroup>

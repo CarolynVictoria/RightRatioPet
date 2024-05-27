@@ -34,7 +34,9 @@ const HomeScreen = () => {
 
 	return (
 		<>
-			<h1>Latest Clients</h1>
+			<div>
+				<h2 className='rr-home-title'>Clients</h2>
+			</div>
 			<Row>
 				{clients.map((client) => (
 					<Col key={client._id} sm={12} md={6} lg={4} xl={3}>

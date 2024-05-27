@@ -38,15 +38,29 @@ main {
 .rr-cobalt {
 	color: #2a348a;
 }
+.rr-blueberry {
+	color: #869ace	;
+}
 .rr-black {
 	color: #1d2029;
 }
 .rr-small {
 	font-size: 0.8em;
 }
+.rr-note {
+	color: #b0aeae;
+	font-style:italic;
+	font-weight:700;
+}
 .navtitle {
 	font-size: 1.8rem;
 	color: #fff;
+}
+.rr-home-title {
+	background-color: #869ace;
+	color: #fff;
+	padding: 4px 20px;
+	margin:0;
 }
 .logo {
 	height: 90px;
@@ -69,6 +83,13 @@ main {
 	overflow: visible;
 	background-color: #fff; /* Optional: to make the expanded text more readable */
 	z-index: 1000; /* Ensures the text appears above other elements */
+}
+
+.rr-right {
+	text-align: right;
+}
+.rr-center {
+	text-align: center;
 }
 
 /* for the pet photos front page */
