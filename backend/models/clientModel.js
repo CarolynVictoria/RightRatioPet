@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const clientSchema = new mongoose.Schema({
+const clientSchema = mongoose.Schema({
 	submissionDate: { type: Date },
 	petName: { type: String },
 	species: { type: String },
