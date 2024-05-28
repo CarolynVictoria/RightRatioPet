@@ -1,25 +1,8 @@
 import express from 'express';
 const router = express.Router();
-import asyncHandler from '../middleware/asyncHandler.js';
-import Client from '../models/clientModel.js';
+import { getClients, getClientById	} from '../controllers/clientController.js';
 
-router.get(
-	'/',
-	asyncHandler(async (req, res) => {
-		const clients = await Client.find({});
-		res.json(clients);
-	})
-);
-
-router.get(
-	'/:id',
-	asyncHandler(async (req, res) => {
-		const client = await Client.findById(req.params.id);
-		if (client) {
-			return res.json(client);
-		}
-		res.status(404).json({ message: 'Client not found.' });
-	})
-);
+router.route('/').get(getClients);
+router.route('/:id').get(getClientById);
 
 export default router;
