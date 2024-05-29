@@ -5,11 +5,23 @@ import Client from '../models/clientModel.js';
 // @route   GET /api/clients
 // @access  Public
 const getClients = asyncHandler(async (req, res) => {
-	const pageSize = 50;
+	const pageSize = 52;
 	const page = Number(req.query.pageNumber) || 1;
-	const count = await Client.countDocuments();
 
-	const clients = await Client.find({})
+	const keyword = req.query.keyword
+		? {
+				$or: [
+					{ firstName: { $regex: req.query.keyword, $options: 'i' } },
+					{ lastName: { $regex: req.query.keyword, $options: 'i' } },
+					{ petName: { $regex: req.query.keyword, $options: 'i' } },
+					{ eMail: { $regex: req.query.keyword, $options: 'i' } },
+				],
+		  }
+		: {};
+
+	const count = await Client.countDocuments(keyword);
+
+	const clients = await Client.find(keyword)
 		.sort({ submissionDate: -1 }) // Sort by submissionDate descending (newest first)
 		.limit(pageSize)
 		.skip(pageSize * (page - 1));

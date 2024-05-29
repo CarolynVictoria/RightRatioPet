@@ -6,6 +6,7 @@ import {
 	Route,
 	RouterProvider,
 } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
 import store from './store';
 //import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,7 +24,12 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<App />}>
 			<Route index={true} path='/' element={<HomeScreen />} />
+			<Route path='/search/:keyword' element={<HomeScreen />} />
 			<Route path='/page/:pageNumber' element={<HomeScreen />} />
+			<Route
+				path='/search/:keyword/page/:pageNumber'
+				element={<HomeScreen />}
+			/>
 			<Route path='/client/:id' element={<ClientScreen />} />
 			<Route path='/login' element={<LoginScreen />} />
 			<Route path='/register' element={<RegisterScreen />} />
@@ -34,9 +40,11 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
+		<HelmetProvider>
 		<Provider store={store}>
 			<RouterProvider router={router} />
 		</Provider>
+		</HelmetProvider>	
 	</React.StrictMode>
 );
 

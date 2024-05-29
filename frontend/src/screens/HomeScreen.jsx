@@ -1,5 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Client from '../components/Client';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
@@ -7,8 +7,11 @@ import Paginate from '../components/Paginate';
 import { useGetClientsQuery } from '../slices/clientsApiSlice';
 
 const HomeScreen = () => {
-	const { pageNumber } = useParams();
-	const { data, isLoading, error } = useGetClientsQuery({ pageNumber });
+	const { pageNumber, keyword } = useParams();
+	const { data, isLoading, error } = useGetClientsQuery({
+		keyword,
+		pageNumber,
+	});
 
 	return (
 		<>
@@ -20,9 +23,14 @@ const HomeScreen = () => {
 				</Message>
 			) : (
 				<>
-					<div>
+					<Row>
 						<h2 className='rr-home-title'>Clients</h2>
-					</div>
+						{keyword && (
+							<Link to='/' className='btn btn-light mb-6 rr-small'>
+								◀︎ Go back
+							</Link>
+						)}
+					</Row>
 					<Row>
 						{data.clients.map((client) => (
 							<Col key={client._id} sm={12} md={6} lg={4} xl={3}>
@@ -30,7 +38,11 @@ const HomeScreen = () => {
 							</Col>
 						))}
 					</Row>
-					<Paginate pages={data.pages} page={data.page} />
+					<Paginate
+						pages={data.pages}
+						page={data.page}
+						keyword={keyword ? keyword : ''}
+					/>
 				</>
 			)}
 		</>
