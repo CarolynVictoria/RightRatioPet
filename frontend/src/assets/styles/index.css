@@ -49,8 +49,8 @@ main {
 }
 .rr-note {
 	color: #b0aeae;
-	font-style:italic;
-	font-weight:700;
+	font-style: italic;
+	font-weight: 700;
 }
 .navtitle {
 	font-size: 1.8rem;
@@ -60,7 +60,7 @@ main {
 	background-color: #869ace;
 	color: #fff;
 	padding: 4px 20px;
-	margin:0;
+	margin: 0;
 }
 .logo {
 	height: 90px;
@@ -109,14 +109,24 @@ main {
 
 /* overrides */
 
-.page-link.active, .active > .page-link  {
-	background-color:#869ace!important;
+.page-link.active,
+.active > .page-link {
+	background-color: #869ace !important;
 }
-.page-link	{
+.page-link {
 	color: #2a348a;
 }
 .list-group-item {
 	color: #1d2029;
+}
+
+.btn-primary {
+	background-color: #2a348a;
+	border-color: #2a348a;
+}
+.btn-primary:hover {
+	background-color: #869ace;
+	border-color: #869ace;
 }
 
 table td,
