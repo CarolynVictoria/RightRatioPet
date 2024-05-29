@@ -109,6 +109,12 @@ main {
 
 /* overrides */
 
+.page-link.active, .active > .page-link  {
+	background-color:#869ace!important;
+}
+.page-link	{
+	color: #2a348a;
+}
 .list-group-item {
 	color: #1d2029;
 }

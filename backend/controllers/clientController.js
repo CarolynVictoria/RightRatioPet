@@ -5,22 +5,28 @@ import Client from '../models/clientModel.js';
 // @route   GET /api/clients
 // @access  Public
 const getClients = asyncHandler(async (req, res) => {
- 		const clients = await Client.find({});
-		res.json(clients);
+	const pageSize = 50;
+	const page = Number(req.query.pageNumber) || 1;
+	const count = await Client.countDocuments();
+
+	const clients = await Client.find({})
+		.limit(pageSize)
+		.skip(pageSize * (page - 1));
+	res.json({ clients, page, pages: Math.ceil(count / pageSize) });
 });
 
 // @desc    Fetch single client
 // @route   GET /api/clients/:id
 // @access  Public
 const getClientById = asyncHandler(async (req, res) => {
-			const client = await Client.findById(req.params.id);
+	const client = await Client.findById(req.params.id);
 
-			if (client) {
-				return res.json(client);
-			} else {
-				res.status(404);
-				throw new Error('Resource not found.');
-			}
+	if (client) {
+		return res.json(client);
+	} else {
+		res.status(404);
+		throw new Error('Resource not found.');
+	}
 });
 
-export { getClients, getClientById }
+export { getClients, getClientById };

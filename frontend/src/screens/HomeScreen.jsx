@@ -1,17 +1,15 @@
 import { Row, Col } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import Client from '../components/Client';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import Paginate from '../components/Paginate';
 import { useGetClientsQuery } from '../slices/clientsApiSlice';
 
 const HomeScreen = () => {
-	const { data: clients, isLoading, error } = useGetClientsQuery();
+	const { pageNumber } = useParams();
 
-	const sortedClients = clients
-		? [...clients].sort(
-				(a, b) => new Date(b.submissionDate) - new Date(a.submissionDate)
-		  )
-		: [];
+	const { data, isLoading, error } = useGetClientsQuery({ pageNumber });
 
 	return (
 		<>
@@ -27,12 +25,13 @@ const HomeScreen = () => {
 						<h2 className='rr-home-title'>Clients</h2>
 					</div>
 					<Row>
-						{sortedClients.map((client) => (
+						{data.clients.map((client) => (
 							<Col key={client._id} sm={12} md={6} lg={4} xl={3}>
 								<Client client={client} />
 							</Col>
 						))}
 					</Row>
+					<Paginate pages={data.pages} page={data.page} />
 				</>
 			)}
 		</>
