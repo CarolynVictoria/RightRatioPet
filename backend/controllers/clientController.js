@@ -10,6 +10,7 @@ const getClients = asyncHandler(async (req, res) => {
 	const count = await Client.countDocuments();
 
 	const clients = await Client.find({})
+		.sort({ submissionDate: -1 }) // Sort by submissionDate descending (newest first)
 		.limit(pageSize)
 		.skip(pageSize * (page - 1));
 	res.json({ clients, page, pages: Math.ceil(count / pageSize) });

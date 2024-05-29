@@ -8,7 +8,6 @@ import { useGetClientsQuery } from '../slices/clientsApiSlice';
 
 const HomeScreen = () => {
 	const { pageNumber } = useParams();
-
 	const { data, isLoading, error } = useGetClientsQuery({ pageNumber });
 
 	return (
