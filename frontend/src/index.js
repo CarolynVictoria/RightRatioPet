@@ -15,6 +15,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import HomeScreen from './screens/HomeScreen';
 import ClientScreen from './screens/ClientScreen';
+import LoginScreen from './screens/LoginScreen';
 
 //create the router
 const router = createBrowserRouter(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
 		<Route path='/' element={<App />}>
 			<Route index={true} path='/' element={<HomeScreen />} />
 			<Route path='/client/:id' element={<ClientScreen />} />
+			<Route	path='/login' element={<LoginScreen />} />
 		</Route>
 	)
 );

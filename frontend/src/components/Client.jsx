@@ -11,6 +11,12 @@ const Client = ({ client }) => {
 		return `${month}-${day}-${year}`;
 	};
 
+	const formatPetName = (petName) => {
+		if (!petName) return '';
+		const firstWord = petName.split(' ')[0];
+		return firstWord.charAt(0).toUpperCase() + firstWord.slice(1).toLowerCase();
+	};
+
 	return (
 		<Card className='my-3 p2 rounded'>
 			<Card.Body>
@@ -18,7 +24,7 @@ const Client = ({ client }) => {
 					<Col>
 						<Link to={`/client/${client._id}`} className='rr-cobalt'>
 							<Card.Title as='div'>
-								<strong>{client.petName}</strong>
+								<strong>{formatPetName(client.petName)}</strong>
 							</Card.Title>
 						</Link>
 					</Col>
