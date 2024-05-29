@@ -16,6 +16,7 @@ import reportWebVitals from './reportWebVitals';
 import HomeScreen from './screens/HomeScreen';
 import ClientScreen from './screens/ClientScreen';
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 //create the router
 const router = createBrowserRouter(
@@ -23,7 +24,8 @@ const router = createBrowserRouter(
 		<Route path='/' element={<App />}>
 			<Route index={true} path='/' element={<HomeScreen />} />
 			<Route path='/client/:id' element={<ClientScreen />} />
-			<Route	path='/login' element={<LoginScreen />} />
+			<Route path='/login' element={<LoginScreen />} />
+			<Route path='/register' element={<RegisterScreen />} />
 		</Route>
 	)
 );
@@ -31,7 +33,7 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<Provider	store={store}>
+		<Provider store={store}>
 			<RouterProvider router={router} />
 		</Provider>
 	</React.StrictMode>
