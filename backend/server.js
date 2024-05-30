@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use('/api/clients', clientRoutes);
 app.use('/api/users', userRoutes);
 
-if (process.env.NODE_ENV ==='PRODUCTION') {
+if (process.env.NODE_ENV ==='production') {
 	//	Set static folder
 	app.use(express.static(path.join(__dirname, '/frontend/build')));
 
