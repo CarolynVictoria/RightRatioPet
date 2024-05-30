@@ -5,7 +5,7 @@ import Client from '../models/clientModel.js';
 // @route   GET /api/clients
 // @access  Public
 const getClients = asyncHandler(async (req, res) => {
-	const pageSize = 52;
+	const pageSize = process.env.PAGINATION_LIMIT;
 	const page = Number(req.query.pageNumber) || 1;
 
 	const keyword = req.query.keyword
