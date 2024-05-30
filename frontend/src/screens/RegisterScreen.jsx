@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import FormContainer from '../components/FormContainer';
 import Loader from '../components/Loader';
@@ -17,7 +17,7 @@ const RegisterScreen = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
-	const [register, { isLoading, error, data }] = useRegisterMutation();
+	const [register, { isLoading }] = useRegisterMutation();
 
 	const { userInfo } = useSelector((state) => state.auth);
 
