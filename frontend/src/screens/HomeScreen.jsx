@@ -26,8 +26,8 @@ const HomeScreen = () => {
 					<Row>
 						<h2 className='rr-home-title'>Clients</h2>
 						{keyword && (
-							<Link to='/' className='btn btn-light mb-6 rr-small'>
-								◀︎ Go back
+							<Link to='/' className='btn btn-light mb-6 rr-small rr-cobalt'>
+								◀︎ Home
 							</Link>
 						)}
 					</Row>
