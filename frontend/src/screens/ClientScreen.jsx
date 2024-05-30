@@ -32,7 +32,7 @@ const ClientScreen = () => {
 					<Row>
 						{
 							<Link to='/' className='btn btn-light rr-small rr-cobalt'>
-								◀︎ Home
+								Home
 							</Link>
 						}
 					</Row>
