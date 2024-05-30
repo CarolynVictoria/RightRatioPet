@@ -5,6 +5,7 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import Paginate from '../components/Paginate';
 import { useGetClientsQuery } from '../slices/clientsApiSlice';
+import Meta from '../components/Meta';
 
 const HomeScreen = () => {
 	const { pageNumber, keyword } = useParams();
@@ -23,6 +24,7 @@ const HomeScreen = () => {
 				</Message>
 			) : (
 				<>
+					<Meta title='Right:Ratio Data Center' />
 					<Row>
 						<h2 className='rr-home-title'>Clients</h2>
 						{keyword && (
