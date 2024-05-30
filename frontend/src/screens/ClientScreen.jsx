@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Row, Col, ListGroup, Card } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
@@ -29,10 +29,17 @@ const ClientScreen = () => {
 				</Message>
 			) : (
 				<>
+					<Row>
+						{
+							<Link to='/' className='btn btn-light rr-small rr-cobalt'>
+								◀︎ Home
+							</Link>
+						}
+					</Row>
 					<Meta title={client.petName} />
 					<Row>
 						<Col md={8}>
-							<Row className='rr-black rr-small'>
+							<Row className='rr-black rr-small pt-3'>
 								<Col xs={12}>
 									<strong>Intake Date: </strong>{' '}
 									{formatDate(client.submissionDate)}
